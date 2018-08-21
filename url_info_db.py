@@ -10,11 +10,10 @@ def getURLInfo(url):
     result = cursor.fetchone()
 
     if (not result):
-        raise Exception("Url not found")
+        return None
 
     malware_info = result[0]
     print("Got malware_info : "+malware_info +" , for url : "+url)
-
     return malware_info
 
 if __name__=="__main__":
