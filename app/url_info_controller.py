@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for
-from url_info_db import getURLInfo
+from flask import Flask
+
+from app.url_info_db import getURLInfo
 
 app = Flask(__name__)
 
