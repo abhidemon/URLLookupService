@@ -1,5 +1,5 @@
 from flask import Flask, request
-from app.url_info_db import get_url_info, save_url_info
+from app.url_info_db import get_url_info, insert_url_info
 import json
 
 app = Flask(__name__)
@@ -16,5 +16,5 @@ def get_url_information(hostname_and_port, original_path_and_query_string):
 def save_url_info_api():
     url = request.form['url']
     malware_info = request.form['malware_info']
-    return save_url_info(url, malware_info)
+    return insert_url_info(url, malware_info)
 
