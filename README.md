@@ -12,4 +12,7 @@ Instructions:-
 1. Clone the project- `git clone https://github.com/princemanohar/URLLookupService.git`
 2. Go into the project folder- `cd  URLLookupService`
 3. Install Dependent python modules - `pip install - requirements.txt`
+4. Run the app- `python run.py`
+
+
 
