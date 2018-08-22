@@ -7,6 +7,7 @@ The decision is based on a database that contains a list of URLs and their infor
 ## Instructions to build and run:- 
 ### Requirements:-
 - Python 3+
+- pip
 
 ### Instructions:-
 1. Clone the project- `git clone https://github.com/princemanohar/URLLookupService.git`
