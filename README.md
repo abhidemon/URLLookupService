@@ -14,6 +14,34 @@ The decision is based on a database that contains a list of URLs and their infor
 3. Install Dependent python modules - `pip install - requirements.txt`
 4. Run the app- `python run.py`
 
+## API Documentation:-
+1. **Get Url Info:** 
+
+*GET* :  `/urlinfo/1/<hostname_and_port>/<original_path_and_query_string>`
+
+**Response**: 
+```
+MALWARE/NOT_MALWARE
+```
+
+2. **Update Url Details** 
+
+*POST* : `/urlinfo`
+
+**Header**:
+```
+-H 'content-type: application/x-www-form-urlencoded' \
+```
+
+**Body** : 
+``
+-d 'url=facebook.com&malware_info=NOT_MALWARE'
+``
+
+**Response**
+```
+SUCCESS
+```
 
 # Extra Considerations:
 1. **The number of requests may exceed the capacity of this system:** In that case, this flask app can be installed on multiple servers and they can be placed behind a **Load Balancer**. The load balancer will distribute the requests evenly to these flask apps, thereby balancing the traffic. That is how this application can be scaled to increasing traffic. Say, each system with the flask app running on it can handle 50 requests/second. And the traffic we are supporting is 500 requests/second, in that case, we can go ahead with 11 servers with this service running on them, hence we now support `11*50=550` requests per second (adding some redundancy).
