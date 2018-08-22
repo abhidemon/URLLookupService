@@ -3,7 +3,27 @@
 This is a microservice written using Python, Flask and MySql to achieve a simple functionality- to check weather a URL is Malware or Not. 
 The decision is based on a database that contains a list of URLs and their informations.
 
+## DB Design
+We are using MySQL server for data storage.
 
+**Table Name:** *url_infos*
+
+| Field        | Type         | Null     | Key         | Default | Extra           |
+|--------------|--------------|----------|-------------|---------|-----------------|
+| url          | varchar(512) | NOT NULL | Primary Key |         |                 |
+| malware_info | varchar(64)  | NOT NULL |             |         |                 |
+| created_at   | timestamp    |          |             | NOW()   |                 |
+| udated_at    | timestamp    |          |             | NOW()   | ON UPDATE NOW() |
+
+**Create Table Command:**
+```
+CREATE TABLE url_infos(
+    url VARCHAR(512) PRIMARY KEY, 
+    malware_info VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP NOT NULL DEFAULT NOW() ON UPDATE NOW()
+);
+```
 ## Instructions to build and run:- 
 ### Requirements:-
 - Python 3+
