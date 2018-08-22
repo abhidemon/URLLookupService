@@ -4,7 +4,6 @@ import json
 
 app = Flask(__name__)
 
-
 @app.route( '/urlinfo/1/<hostname_and_port>/<original_path_and_query_string>')
 def get_url_information(hostname_and_port, original_path_and_query_string):
     malware_info = get_url_info(hostname_and_port)
@@ -19,5 +18,3 @@ def save_url_info_api():
     malware_info = request.form['malware_info']
     return save_url_info(url, malware_info)
 
-if __name__ == '__main__':
-    app.run(debug=True, port=9000)
