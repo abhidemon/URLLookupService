@@ -1,7 +1,6 @@
-import MySQLdb
 import _mysql_exceptions
+from app.db_conn import db
 
-db = MySQLdb.connect("localhost", "root", "root")
 
 valid_malware_infos = {"MALWARE", "NOT_MALWARE"}
 
